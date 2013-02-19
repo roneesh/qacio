@@ -20,6 +20,17 @@
   <%= @project.client %>
 </p>
 
+<p>
+  <b>Documents:</b>
+  <ul>
+    <% @documents.each do |document| %>
+      <li> <%= link_to document.name, document_path(document.id) %>
+    <% end %>
+  </ul>
+<p>
+
+<%= link_to "New Document", new_document_path %>
+
 
 <%= link_to 'Edit', edit_user_project_path(@user, @project) %> |
 <%= link_to 'Back', user_projects_path %>

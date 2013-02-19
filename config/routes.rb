@@ -1,4 +1,6 @@
 Qacio::Application.routes.draw do
+  
+
   get "pages/sign_in"
 
   devise_for :users
@@ -7,6 +9,8 @@ Qacio::Application.routes.draw do
     resources :projects
   end
   
+  resources :documents
+
   authenticated :user do
     root :to => 'home#index'
   end
