@@ -1,3 +1,10 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= link_to project.name, user_project_path(@user.id, project.id) %>
+    </li>
+  <% end %>
+</ul>
