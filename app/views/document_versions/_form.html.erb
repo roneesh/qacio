@@ -1,0 +1,32 @@
+<%= form_for @document_version, html: {multipart: true} do |f| %>
+  <% if @document_version.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document_version.errors.count, "error") %> prohibited this document_version from being saved:</h2>
+
+      <ul>
+      <% @document_version.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :document_id %><br />
+    <%= f.number_field :document_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  <div class="actions">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

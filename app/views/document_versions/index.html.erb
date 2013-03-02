@@ -1,0 +1,23 @@
+<h1>Listing document_versions</h1>
+
+<table>
+  <tr>
+    <th>Document</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @document_versions.each do |document_version| %>
+  <tr>
+    <td><%= document_version.document_id %></td>
+    <td><%= link_to 'Show', document_version %></td>
+    <td><%= link_to 'Edit', edit_document_version_path(document_version) %></td>
+    <td><%= link_to 'Destroy', document_version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Document version', new_document_version_path %>

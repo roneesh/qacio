@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Document:</b>
+  <%= @document_version.document_id %>
+</p>
+
+<p>
+  <b>Document Version: </b>
+  <%= link_to @document_version.file_url, @document_version.name %>
+</p>
+
+<p>
+  <b>ANNOTATE: </b>
+  <%= link_to "ANNOTATE", "/document_version/#{@document_version.id}/annotate" %>
+<p>
+
+<%= link_to 'Edit', edit_document_version_path(@document_version) %> |
+<%= link_to 'Back', document_versions_path %>

@@ -1,7 +1,12 @@
 Qacio::Application.routes.draw do
   
 
+  resources :document_versions
+
+
   get "pages/sign_in"
+
+  get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate" }
 
   devise_for :users
 
@@ -17,5 +22,4 @@ Qacio::Application.routes.draw do
   
   root :to => "home#index"
   
-
 end
