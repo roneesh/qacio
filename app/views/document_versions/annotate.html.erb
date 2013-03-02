@@ -5,4 +5,17 @@
 <br/>
 <br/>
 
-<%= image_tag @document_version.file_url %>
+<%= image_tag @document_version.file_url, id: "document" %>
+
+
+
+<script> 
+function blackNote() {
+  return $(document.createElement('span')).addClass('black circle note');
+}
+  
+$('#document').annotatableImage(blackNote);
+
+</script>
+
+<script type="text/javascript" src="annotate.js"> </script>
