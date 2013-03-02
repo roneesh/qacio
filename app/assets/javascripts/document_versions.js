@@ -1,3 +1,7 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
 /*!
  * jQuery Annotation Plugin
  * http://www.zurb.com/playground/javascript-annotation-plugin
@@ -5,7 +9,6 @@
  * Copyright 2010, ZURB
  * Released under the MIT License
  */
- 
 (function($){
   
   $.fn.annotatableImage = function(annotationCallback, options) {
@@ -121,7 +124,5 @@
   $.fn.coordinates = function() {
     return {x: parseInt($(this).css('left').replace('px', '')), y: parseInt($(this).css('top').replace('px', ''))};
   };
-
-}
-
+  
 })(jQuery);

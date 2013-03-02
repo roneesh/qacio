@@ -1,21 +1,6 @@
 <%= @document_version.id %>
 <%= @document_version.name %>
 
-<br/>
-<br/>
-<br/>
+<br/><br/><br/>
 
-<%= image_tag @document_version.file_url, id: "document" %>
-
-
-
-<script> 
-function blackNote() {
-  return $(document.createElement('span')).addClass('black circle note');
-}
-  
-$('#document').annotatableImage(blackNote);
-
-</script>
-
-<script type="text/javascript" src="annotate.js"> </script>
+<%= image_tag @document_version.file_url, id: "pdf" %>
