@@ -4,3 +4,13 @@
 <br/><br/><br/>
 
 <%= image_tag @document_version.file_url, id: "pdf" %>
+
+<script>
+
+  function blackNote() {
+    return $(document.createElement('span')).addClass('black')
+  }
+    
+  $('#pdf').annotatableImage(blackNote);
+
+</script>

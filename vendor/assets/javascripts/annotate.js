@@ -5,7 +5,7 @@
  * Copyright 2010, ZURB
  * Released under the MIT License
  */
- 
+
 (function($){
   
   $.fn.annotatableImage = function(annotationCallback, options) {
@@ -121,7 +121,5 @@
   $.fn.coordinates = function() {
     return {x: parseInt($(this).css('left').replace('px', '')), y: parseInt($(this).css('top').replace('px', ''))};
   };
-
-}
-
+  
 })(jQuery);
