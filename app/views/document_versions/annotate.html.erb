@@ -7,12 +7,7 @@
   <%= image_tag @document_version.file_url, id: "pdf" %>
 </div>
 
-<script>
-
-  function blackNote() {
-    return $(document.createElement('span')).addClass('black')
-  }
-    
-  $('#pdf').annotatableImage(blackNote);
-
+<script type="text/javascript">
+  var document_version_id = "<%= @document_version_id %>" 
+  var annotation_count = <%= @annotation_count %>
 </script>
