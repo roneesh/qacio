@@ -1,0 +1,28 @@
+.black {
+  background: black;
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  // To make the span overlay the image behind it
+  z-index: 2;
+  color: white;
+  font-size: 4pt;
+}
+
+#image-area {
+  position: relative !important;
+
+  span.black {
+    position: aboslute;
+  }
+
+}
+
+.comment-entry {
+  height: 22px;
+  width: 230px;
+  border: 1px solid black;
+
+}
