@@ -3,8 +3,8 @@ Qacio::Application.routes.draw do
 
   resources :document_versions
 
-
   get "pages/sign_in"
+  get "pages/test"
 
   get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate" }
 
@@ -21,5 +21,8 @@ Qacio::Application.routes.draw do
   end
   
   root :to => "home#index"
+
+  post "/create_annotation", {controller: "Annotations", action: "create"}
+  delete "/delete_annotation", {controller: "Annotations", action: "delete"}
   
 end
