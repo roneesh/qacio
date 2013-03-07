@@ -4,7 +4,9 @@
 <br/><br/><br/>
 
 <div id="image-area">
-  <%= image_tag @document_version.file_url, id: "pdf" %>
+  <%#= image_tag @document_version.file_url, id: "pdf" %>
+  <object width="400" height="500" data="<%= @document_version.file_url %>" id="pdf_content">
+  </object>
 </div>
 
 <script type="text/javascript">

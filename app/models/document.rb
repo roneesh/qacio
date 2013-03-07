@@ -4,4 +4,6 @@ class Document < ActiveRecord::Base
   belongs_to :project
 
   has_many :documentversions
+
+  has_many :collaborators
 end
