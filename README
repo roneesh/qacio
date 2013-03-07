@@ -19,7 +19,9 @@ Annoation belong_to DocumentVersion
 TO DO:
 1. Get annoations working as good as possible (I'll try do do from India what I can), when I come back I can do that. 
 
-2. Stitch together flow of main user views, so after login they go to Dasbaord and see Projects, they click on Project and see list of Documents, click on Document and see list of DocumentVersions, click on Document Version and they can then click on link to Annotate it. Each of these pages has various links working and not working, nothing too serious, just point them in the right direction. Figure out where/how by using rake routes command in terminal. Put in all their views. 
+2. PDF's wont' display as images that can be annotated over. I think the solution is to use Carrierwave Gem with ImageMagick to create an image of the pdf when it is uploaded... See the great railscasts on using carrierwave and carrierwave uploading to Amazon S3 for how our uploading is done.
+
+3. Stitch together flow of main user views, so after login they go to Dasbaord and see Projects, they click on Project and see list of Documents, click on Document and see list of DocumentVersions, click on Document Version and they can then click on link to Annotate it. Each of these pages has various links working and not working, nothing too serious, just point them in the right direction. Figure out where/how by using rake routes command in terminal. Put in all their views. 
 
 TO STYLE ANNOTATION BUBBLE:
 Look at the css file called annotations, make a class with whatever styling you want in there. In the annoations.js.coffee file, on line 9 replace the class='black' portion of the string with class='what you made'. Basically the idea is that on click, a div is put above the image.
