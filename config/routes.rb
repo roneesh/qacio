@@ -8,6 +8,12 @@ Qacio::Application.routes.draw do
 
   get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate" }
 
+  get "/collaborators/new", {controller: "Collaborator", action: "new"}
+  get "/collaborators/document_version/:id/index", {controller: "Collaborator", action: "index"}
+  delete "/collaborators/:id/delete", {controller: "Collaborator", action: "delete"}, as: "delete_collaborator"
+  post "/collaborators/create"
+
+
   devise_for :users
 
   resources :users do

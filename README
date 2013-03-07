@@ -16,6 +16,9 @@ DocumentVersion belong_to Document
 Collaborator belong_to Document
 Annoation belong_to DocumentVersion
 
+Note: Users and Projects are nested routes (Users/1/Projects/4, etc), every other asset is not nested routes.
+
+
 TO DO:
 1. Get annoations working as good as possible (I'll try do do from India what I can), when I come back I can do that. 
 

@@ -1,0 +1,7 @@
+<h1> Collaborators for <%= @document.name %>
+
+<ul>
+  <%= @collaborators.each do |collaborator| %>
+    <li> <%= @collaborator.email%> -- <%= link_to "Delete", delete_collaborator_path(@collaborator.id)  %></li>
+  <% end %>
+</ul>
