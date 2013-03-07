@@ -1,5 +1,35 @@
 Special Thanks to Jordan Leigh and the whole 3Binary crew for their technical assistance!
 
+MODELS:
+User, Project, Document, DocumentVersion, Annotation, Collaborators
+
+User has_many Projects
+Project has_many Documents
+Document has_many DocumentVersions
+Document has_many Collaborators
+DocumentVersion has_many Annotations
+
+Likewise...
+Projects belong_to User
+Document belong_to Project
+DocumentVersion belong_to Document
+Collaborator belong_to Document
+Annoation belong_to DocumentVersion
+
+TO DO:
+1. Get annoations working as good as possible (I'll try do do from India what I can), when I come back I can do that. 
+
+2. Stitch together flow of main user views, so after login they go to Dasbaord and see Projects, they click on Project and see list of Documents, click on Document and see list of DocumentVersions, click on Document Version and they can then click on link to Annotate it. Each of these pages has various links working and not working, nothing too serious, just point them in the right direction. Figure out where/how by using rake routes command in terminal. Put in all their views. 
+
+TO STYLE ANNOTATION BUBBLE:
+Look at the css file called annotations, make a class with whatever styling you want in there. In the annoations.js.coffee file, on line 9 replace the class='black' portion of the string with class='what you made'. Basically the idea is that on click, a div is put above the image.
+
+ABOUT ANNOTATIONS:
+It's a script that takes a click inside the div with the id of "image-area" and adds a div on top of that based off the xOffset and yOffset the click event. From there it should use the jqry AJAX function to talk to the server. If you uncomment the jquery in lines 18-23 of annotation.js.coffee, each click will communicate with the server. However maybe it needs to happne when the user submits the comment. 
+
+There is no plugin being used for annotations, I tried to use Zurb Foundation Annotation, but it's out of date and not working with Rails 3.2.11, it was originally built for Rails 2, so something is broken with it now. 
+
+
 
 Qacio
 ========================
