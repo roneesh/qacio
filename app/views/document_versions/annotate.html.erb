@@ -1,12 +1,25 @@
-<%= @document_version.id %>
-<%= @document_version.name %>
+<div id="image-comment-container">
 
-<br/><br/><br/>
+  <%= @document_version.id %>
+  <br>
+  <%= @document_version.name %>
+  <br>
+  <br>
 
-<div id="image-area">
-  <%#= image_tag @document_version.file_url, id: "pdf" %>
-  <object width="400" height="500" data="<%= @document_version.file_url %>" id="pdf_content">
-  </object>
+  <div id="image-area">
+    <%#= image_tag @document_version.file_url, id: "pdf" %>
+    <object width="400" height="500" data="<%= @document_version.file_url %>" id="pdf_content">
+    </object>
+  </div>
+
+  <div id="comment-area">
+    <ul class="annotation-list">
+      <% @annotations.each do |annotation_object| %>
+        <li> <%= annotation_object.content %> </li>
+      <% end %>
+    </ul>    
+  </div>
+
 </div>
 
 <script type="text/javascript">
