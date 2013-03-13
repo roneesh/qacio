@@ -15,7 +15,7 @@
   <div id="comment-area">
     <ul class="annotation-list">
       <% @annotations.each do |annotation_object| %>
-        <li> <%= annotation_object.content %> </li>
+        <li><%= annotation_object.number%>. <%= annotation_object.content %> <br/><a class='anno_delete' href='#'>Delete</a></li>
       <% end %>
     </ul>    
   </div>

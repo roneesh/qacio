@@ -9,9 +9,9 @@ CREATE
 3. New form pops up at point of click *DONE* 
 4. If cancel button is hit, then user story 2 should remove all the forms *DONE*
 5. If checkmark or enter is hit, AJAX creates comment
-  -> Form is removed
-  -> Comment pops up in bl ue bar on right
-  -> black dot is put at point of click
+  -> Form is removed *DONE*
+  -> Comment pops up in blue bar on right *DONE*
+  -> black dot is put at point of click *DONE*
   -> both comment and black dot have id equal to annotation_count, which is a document_version model.
 
 DESTROY

@@ -18,17 +18,12 @@ $ ->
       $('.image-comment').remove()
       $("#image-area").append(form+text_input+submit+cancel+closers)
 
-  $("#image-area").on "click", ".black", (e) ->
-    annotation_count -= 1
-    $(e.target).remove()
-    console.log($.ajax({
-      url: "/delete_annotation"
-    }))
-
+# Cancels the form
   $("#image-area").on "click", "#cancel", (e) ->
     $('.image-comment').remove()
-    annotation_count -= 1
 
+
+# Creates annotation in db after user hits submit
   $("#image-area").on "click", "#submit", (e) ->
     annotation_text = $('#text').val()
     $('.image-comment').remove()
@@ -36,10 +31,21 @@ $ ->
     console.log($.ajax({
       url: "/create_annotation",
       type: "POST",
-      data: { id : document_version_id, content: annotation_text }
+      data: { id : document_version_id, content: annotation_text, number: annotation_count }
     }))
     # $("<div><p>Hello</p></div>").appendTo("#body")
     if annotation_text != ""
-      $("#image-area").append("<div class='black' style='left: #{commentleft}px; top: #{commenttop}px;'></div>")
-      $('.annotation-list').append("<li>#{annotation_text}</li>")
+      $("#image-area").append("<div id='#{annotation_count}' class='black' style='left: #{commentleft}px; top: #{commenttop}px;'></div>")
+      $('.annotation-list').append("<li id='#{annotation_count}'>#{annotation_count}. #{annotation_text} <br/><a class='anno_delete' href='#'>Delete</a></li>")
 
+# Removes annotation bubble if clicked
+  $("#image-area").on "click", ".black", (e) ->
+    $(e.target).remove()
+    console.log($.ajax({
+      url: "/delete_annotation",
+      type: "DELETE"
+    }))
+
+# Delete's annotation if Delete link clicked
+  # $('.anno_delete').on "click", (e) ->
+  #   $()

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306195136) do
+ActiveRecord::Schema.define(:version => 20130313165838) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "document_version_id"

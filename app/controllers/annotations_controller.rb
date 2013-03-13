@@ -2,7 +2,7 @@ class AnnotationsController < ApplicationController
 
   def create
 
-    Annotation.create(document_version_id: params[:id], content: params[:content])
+    Annotation.create(document_version_id: params[:id], content: params[:content], number: params[:number])
 
   end
 
