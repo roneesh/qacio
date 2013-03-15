@@ -11,6 +11,12 @@
   font-size: 4pt;
 }
 
+.black p {
+  position: relative;
+  left: 25%;
+  top: 10%;
+}
+
 #image-comment-container {
   margin: 0 auto;
   width: 960px;
@@ -21,7 +27,6 @@
   float: left;
   max-width: 600px ;
   background: red;
-
 }
 
 #comment-area {
@@ -30,10 +35,6 @@
   height: 500px;
   border: 5px solid blue;
   overflow: scroll;
-}
-
-span.black {
-    position: absolute;
 }
 
 input[type=text] {

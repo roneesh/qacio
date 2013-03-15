@@ -29,6 +29,6 @@ Qacio::Application.routes.draw do
   root :to => "home#index"
 
   post "/create_annotation", {controller: "Annotations", action: "create"}
-  delete "/delete_annotation", {controller: "Annotations", action: "delete"}
+  delete "/delete_annotation/:number", {controller: "Annotations", action: "destroy"}
   
 end
