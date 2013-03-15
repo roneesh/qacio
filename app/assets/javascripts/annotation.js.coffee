@@ -39,7 +39,7 @@ $ ->
     }))
     # $("<div><p>Hello</p></div>").appendTo("#body")
     if annotation_text != ""
-      $("#image-area").append("<div anno='#{annotation_count}' id='#{annotation_count}' class='#{annotation_count} black' style='left: #{commentleft}px; top: #{commenttop}px;'><p>#{annotation_count}</p></div>")
+      $("#image-area").append("<div id='#{annotation_count}' class='#{annotation_count} black' style='left: #{commentleft}px; top: #{commenttop}px;'><p>#{annotation_count}</p></div>")
       $('.annotation-list').append("<li class='#{annotation_count}'>Annotation number #{annotation_count} <br/> '#{annotation_text}'<br/><a id='#{annotation_count}' class='#{annotation_count}' href='#'>Delete</a></li>")
 
 # Deletes an annotation bubble if clicked

@@ -1,20 +1,20 @@
 .black {
   background: black;
-  width: 25px !important;
-  height: 25px !important;
-  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  // border-radius: 50%;
   display: block;
   position: absolute;
   // To make the span overlay the image behind it
   z-index: 10;
   color: white;
-  font-size: 4pt;
 }
 
 .black p {
   position: relative;
   left: 25%;
   top: 10%;
+  font-size: 10pt;
 }
 
 #image-comment-container {
@@ -25,21 +25,22 @@
 #image-area {
   position: relative;
   float: left;
-  max-width: 600px ;
-  background: red;
+  width: 600px ;
+  border: 1px solid black;
 }
+
 
 #comment-area {
   float: right;
   width: 250px;
   height: 500px;
-  border: 5px solid blue;
+  border: 1px solid black;
   overflow: scroll;
 }
 
 input[type=text] {
   width: 150px;
-  display:block;
+  displa2y:block;
   margin-bottom:10px;
   background-color:yellow;
   margin: 25px;
