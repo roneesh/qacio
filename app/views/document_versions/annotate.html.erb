@@ -12,7 +12,7 @@
     </object>
     <% @annotations.each do |annotation_object| %>
       <div id="<%=annotation_object.number%>" class="<%=annotation_object.number%> black" style="left:<%=annotation_object.xcoor %>px; top: <%=annotation_object.ycoor%>px;">
-        <p>   <%= annotation_object.number %> </p>
+        <p><%= annotation_object.number %></p>
       </div>
     <% end %>
   </div>
@@ -20,7 +20,7 @@
   <div id="comment-area">
     <ul class="annotation-list">
       <% @annotations.each do |annotation_object| %>
-        <li class="<%=annotation_object.number%>">Annotation number <%= annotation_object.number%> <br/> "<%= annotation_object.content %>" <br/><a id="<%=annotation_object.number%>" class="<%=annotation_object.number%>" href='#'>Delete</a></li>
+        <li class="<%=annotation_object.number%>">Annotation number <%= annotation_object.number%> <br/> '<%= annotation_object.content %>' <br/><a id="<%=annotation_object.number%>" class="<%=annotation_object.number%>" href='#'>Delete</a></li>
       <% end %>
     </ul>    
   </div>
