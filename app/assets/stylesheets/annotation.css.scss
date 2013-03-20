@@ -1,13 +1,16 @@
 .black {
-  background: black;
+  // background: black;
   width: 25px;
   height: 25px;
-  // border-radius: 50%;
+  // border-left: 2px solid red;
+  // border-top: 2px solid red;
+  border-radius: 50%;
+  border: 2px solid red;
   display: block;
   position: absolute;
   // To make the span overlay the image behind it
   z-index: 10;
-  color: white;
+  color: red;
 }
 
 .black p {
@@ -40,7 +43,7 @@
 
 input[type=text] {
   width: 150px;
-  displa2y:block;
+  display:block;
   margin-bottom:10px;
   background-color:yellow;
   margin: 25px;

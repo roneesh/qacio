@@ -12,8 +12,8 @@ $ ->
     console.log e
     document_id = document_version_id
     unless $(e.target).hasClass("black") || $(e.target).hasClass("comment-entry") || $(e.target).hasClass("annotate-btn")
-      commentleft = e.offsetX - 11
-      commenttop = e.offsetY - 11
+      commentleft = e.offsetX
+      commenttop = e.offsetY
       form = "<form id='#{annotation_count}' style='left: #{e.offsetX}px; top: #{e.offsetY}px;' class='image-comment' action='#'>"
       text_input = "<input type='text' id='text' class='comment-entry' placeholder='Annotation here' style='left: #{commentleft}px; top: #{commenttop}px;'>"
       submit = "<input type='submit' id='submit' class='submit-btn annotate-btn'>"
@@ -40,7 +40,16 @@ $ ->
     # $("<div><p>Hello</p></div>").appendTo("#body")
     if annotation_text != ""
       $("#image-area").append("<div id='#{annotation_count}' class='#{annotation_count} black' style='left: #{commentleft}px; top: #{commenttop}px;'><p>#{annotation_count}</p></div>")
-      $('.annotation-list').append("<li class='#{annotation_count}'>Annotation number #{annotation_count} <br/> '#{annotation_text}'<br/><a id='#{annotation_count}' class='#{annotation_count}' href='#'>Delete</a></li>")
+      $('.annotation-list').append("<li class='#{annotation_count}'>Annotation number #{annotation_count} <br/> '#{annotation_text}'<br/><a href='#' id='#{annotation_count}' class='#{annotation_count}'>Reply </a> | <a id='delete' class='#{annotation_count}' href='#'>Delete</a></li>")
+    # Does PUT on DocumentVersion annotation_count  
+    console.log($.ajax({
+      url: "/increment_annotation_count/#{document_version_id}"
+      type: "PUT"
+      data: {annotation_count: annotation_count}
+      }))
+
+
+
 
 # Deletes an annotation bubble if clicked
   # $("#image-area").on "click", ".black", (e) ->
@@ -54,7 +63,7 @@ $ ->
   #   }))
 
 # Delete's annotation if Delete link clicked
-  $('#comment-area').on "click", 'a', (e) ->
+  $('#comment-area').on "click", '#delete', (e) ->
     console.log e
     to_rem_class = $(e.target).attr('class')
     to_rem_objects = ".#{to_rem_class}"

@@ -12,16 +12,35 @@ CREATE
   -> Form is removed *DONE*
   -> Comment pops up in blue bar on right *DONE*
   -> black dot is put at point of click *DONE*
-  -> both comment and black dot have id equal to annotation_count, which is a document_version model.
+  -> both comment and black dot have id equal to annotation_count, which is a document_version model. NOT-DONE
 
 DESTROY
-1. If black dot on image is clicked
-  -> DELETE to db to delete annotation
-  -> remove black dot on image
-2. If X near Annotation is clicked
-  -> DELETE to db to delete annotation
+1. If black dot on image is clicked *WILL NOT BE DONE*
+  -> DELETE to db to delete annotation *DONE
+  -> remove black dot on image *DONE*
+2. If X near Annotation is clicked *DONE*
+  -> DELETE to db to delete annotation *DONE*
 
 DocumentVersion should have annotation count, that's the only way to consistently manage the issue!
+
+Reply's to Annotation User Story
+
+For now replies can only be done to the annotation, and not to other replies. 
+
+CREATE
+1. User clicks on reply *DONE*
+2. Form pops up directly below annotation comment
+3. User types in reply and when done hits submit 
+5. AJAX creates reply in db, linking it to annotation
+6. Form is removed
+7. Reply is displayed below annotation, indented
+8. Reply has links to delete
+
+DESTROY
+1. User clicks delete on delete
+  -> DELETE to db to delete reply object
+  -> the reply is removed() from DOM
+
 
 
 
